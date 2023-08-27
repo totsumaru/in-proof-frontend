@@ -1,13 +1,73 @@
-import {createServerComponentClient} from '@supabase/auth-helpers-nextjs'
-import {cookies} from 'next/headers'
+import Title from "@/components/text/Title";
+import {StarIcon} from "@heroicons/react/24/solid";
+import React from "react";
+import DynamicImageBox from "@/components/image/DynamicImageBox";
+import CollectionName from "@/components/text/CollectionName";
+
+const collections: { [key: string]: { image: string, name: string }[] }[] = [
+  {
+    "MIRAKO.": [
+      {
+        image: "https://i.seadn.io/gcs/files/92e9fd146e8c4bb8bf8f928f5ba0c18e.jpg?auto=format&dpr=1&w=384",
+        name: "MIRAKO. season1",
+      }, {
+        image: "https://i.seadn.io/gcs/files/92e9fd146e8c4bb8bf8f928f5ba0c18e.jpg?auto=format&dpr=1&w=384",
+        name: "MIRAKO. season1",
+      }, {
+        image: "https://i.seadn.io/gcs/files/92e9fd146e8c4bb8bf8f928f5ba0c18e.jpg?auto=format&dpr=1&w=384",
+        name: "MIRAKO. season1",
+      }, {
+        image: "https://i.seadn.io/gcs/files/92e9fd146e8c4bb8bf8f928f5ba0c18e.jpg?auto=format&dpr=1&w=384",
+        name: "MIRAKO. season1",
+      },
+    ]
+  }, {
+    "MIRAKO.": [
+      {
+        image: "https://i.seadn.io/gcs/files/92e9fd146e8c4bb8bf8f928f5ba0c18e.jpg?auto=format&dpr=1&w=384",
+        name: "MIRAKO. season1",
+      }, {
+        image: "https://i.seadn.io/gcs/files/92e9fd146e8c4bb8bf8f928f5ba0c18e.jpg?auto=format&dpr=1&w=384",
+        name: "MIRAKO. season1",
+      },
+    ]
+  }
+];
 
 export default async function Index() {
-  const supabase = createServerComponentClient({cookies})
-  const {data: {user}} = await supabase.auth.getUser()
-
   return (
-    <>
-      b
-    </>
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* widthを変更する場合は`max-w-3xl`を変更してください */}
+      <div className="mx-auto mt-2 max-w-3xl">
+        <Title text={"お気に入り"} icon={
+          <StarIcon className="-ml-0.5 h-5 w-5 text-yellow-400" aria-hidden="true"/>
+        }/>
+
+        {/* 1コレクションずつ */}
+        <div className="mt-2">
+          {collections.map((collection, index) => (
+            <div key={index}>
+              {Object.keys(collection).map((key) => (
+                <div key={key}>
+                  {/* コレクション名 */}
+                  <CollectionName text={key}/>
+                  {/* 画像 */}
+                  <div
+                    role="list"
+                    className="mt-2 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+                  >
+                    {collection[key].map(({image, name}, index) => (
+                      // <ImageBox key={index} imageUrl={image} text={name}/>
+                      <DynamicImageBox key={index} imageUrl={image} text={name}/>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
   )
 }

@@ -1,10 +1,10 @@
 "use client"
 
-import LoginButton from "@/components/login/LoginButton";
+import LoginButton from "@/components/button/LoginButton";
 
 export default function Header() {
   return (
-    <div className="bg-gray-800 mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto px-4 sm:px-6 lg:px-8 shadow">
       <div className="flex h-16 justify-between">
 
         {/* 前半部分 */}
