@@ -2,7 +2,6 @@ import Title from "@/components/text/Title";
 import {StarIcon} from "@heroicons/react/24/solid";
 import React from "react";
 import DynamicImageBox from "@/components/image/DynamicImageBox";
-import CollectionName from "@/components/text/CollectionName";
 
 const collections: { [key: string]: { image: string, name: string }[] }[] = [
   {
@@ -50,7 +49,9 @@ export default async function Index() {
               {Object.keys(collection).map((key) => (
                 <div key={key}>
                   {/* コレクション名 */}
-                  <CollectionName text={key}/>
+                  <h2 className="text-lg text-gray-900 font-bold border-b">
+                    {key}
+                  </h2>
                   {/* 画像 */}
                   <div
                     role="list"
