@@ -1,5 +1,7 @@
 import './globals.css'
 import React from "react";
+import Header from "@/components/header/Header";
+
 
 export const metadata = {
   title: "NFT View",
@@ -14,7 +16,8 @@ export default function RootLayout({
   return (
     <html lang="ja">
     <body>
-    <main className="min-h-screen bg-background flex flex-col">
+    <main className="min-h-screen">
+      <Header/>
       {children}
     </main>
     </body>
