@@ -1,22 +1,25 @@
-"use client"
+"use client";
 
-import LoginButton from "@/components/button/LoginButton";
+import { magic } from "@/lib/magic";
+import { Magic } from "magic-sdk";
+import { useRouter } from "next/navigation";
+
+const magicIns: Magic = magic as any;
 
 export default function Header() {
+  const router = useRouter();
+
+  const logout = () => {
+    magicIns.user.logout().then(() => {
+      router.push("/login");
+    });
+  };
+
   return (
-    <div className="mx-auto px-4 sm:px-6 lg:px-8 shadow">
-      <div className="flex h-16 justify-between">
-
-        {/* 前半部分 */}
-        <div className="flex">
-        </div>
-
-        {/* ボタン */}
-        <div className="flex items-center">
-          <LoginButton/>
-        </div>
-
-      </div>
-    </div>
-  )
-}
+    <header className=" bg-gray-100">
+      <button onClick={logout}>
+        ログアウト
+      </button>
+    </header>
+  );
+};
