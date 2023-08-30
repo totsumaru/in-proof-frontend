@@ -9,8 +9,6 @@ import ButtonSpinnerSVG from "@/public/ButtonSpinnerSVG";
 const magicIns: Magic = magic as any;
 
 // ログインボタンです
-//
-//
 export default function LoginButton() {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false)
@@ -35,7 +33,9 @@ export default function LoginButton() {
       disabled={loading}
       type="button"
       onClick={handleLoginWithEmail}
-      className="rounded-full bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 inline-flex items-center"
+      className="rounded-full bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500
+       focus-visible:outline focus-visible:outline-2
+       focus-visible:outline-offset-2 focus-visible:outline-indigo-600 inline-flex items-center"
     >
       {loading && <ButtonSpinnerSVG/>}
       ログイン

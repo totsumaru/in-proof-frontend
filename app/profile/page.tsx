@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Magic } from "magic-sdk";
+import { Magic, MagicUserMetadata } from "magic-sdk";
 import { magic } from "@/lib/magic";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/Loading";
@@ -10,13 +10,15 @@ const magicIns: Magic = magic as any;
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true)
-  const [metadata, setMetadata] = useState<any>()
+  const [metadata, setMetadata] = useState<MagicUserMetadata>()
   const router = useRouter()
 
   useEffect(() => {
     (async () => {
       try {
         const userMetadata = await magicIns.user.getMetadata()
+        const didToken = await magicIns.user.getIdToken()
+        console.log(didToken)
         setLoading(false)
         setMetadata(userMetadata)
       } catch (error) {
@@ -32,10 +34,10 @@ export default function Home() {
       ) : (
         <div>
           <div className="text-black mt-8">Email</div>
-          <div>{metadata.email}</div>
+          <div>{metadata?.email}</div>
 
           <div className="text-black mt-8">User Id</div>
-          <div>{metadata.issuer}</div>
+          <div>{metadata?.issuer}</div>
         </div>
       )}
     </div>
