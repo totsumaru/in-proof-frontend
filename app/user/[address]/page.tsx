@@ -3,19 +3,18 @@
 import { Magic } from "magic-sdk";
 import { magic } from "@/lib/magic";
 import React from "react";
-import { useRouter } from "next/navigation";
 import Collection from "@/components/image/collection/Collection";
 
 const magicIns: Magic = magic as any;
 
 // ユーザーのダッシュボードです
-export default function MyPage({
-  params: { address }
-}: {
-  params: { address: string }
-}) {
-  const router = useRouter()
-
+export default function User(
+  {
+    params: { address }
+  }: {
+    params: { address: string }
+  }
+) {
   return (
     <div className="mx-auto max-w-7xl px-4 pt-5 sm:px-6 lg:px-8">
       <div>

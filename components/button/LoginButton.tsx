@@ -19,7 +19,7 @@ export default function LoginButton() {
     try {
       const addresses = await magicIns.wallet.connectWithUI()
       if (addresses) {
-        router.push(`/mypage/${addresses[0]}`);
+        router.push(`/user/${addresses[0]}`);
       }
     } catch (error) {
       console.error(error);
