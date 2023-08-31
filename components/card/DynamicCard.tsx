@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic"
 
 // スケルトン対応したImageBoxです
-const DynamicImageBox = dynamic(() => import("./ImageBox"), {
+const DynamicCard = dynamic(() => import("./Card"), {
   ssr: false,
   loading: () => <Skeleton/>
 })
@@ -17,4 +17,4 @@ function Skeleton() {
   )
 }
 
-export default DynamicImageBox
+export default DynamicCard

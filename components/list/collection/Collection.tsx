@@ -1,4 +1,4 @@
-import DynamicImageBox from "@/components/image/image-box/DynamicImageBox";
+import DynamicCard from "@/components/card/DynamicCard";
 
 const collections: {
   [key: string]: {
@@ -64,7 +64,7 @@ export default function Collection() {
                   className="mt-2 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
                 >
                   {collection[key].map(({ image, name, text, tag }, index) => (
-                    <DynamicImageBox
+                    <DynamicCard
                       key={index}
                       imageUrl={image}
                       title={name}

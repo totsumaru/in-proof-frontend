@@ -3,7 +3,7 @@
 import { Magic } from "magic-sdk";
 import { magic } from "@/lib/magic";
 import React from "react";
-import Collection from "@/components/image/collection/Collection";
+import Collection from "@/components/list/collection/Collection";
 import UserBlock from "@/components/user/UserBlock";
 import { UserIcon } from "@heroicons/react/24/outline";
 

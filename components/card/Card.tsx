@@ -10,7 +10,7 @@ type Props = {
   tag: string
 }
 
-export default function ImageBox({ key, imageUrl, title, text, tag }: Props) {
+export default function Card({ key, imageUrl, title, text, tag }: Props) {
   return (
     <div className="relative aspect-square rounded-xl" key={key}>
       <Link href={`/nft/0xabcd/1`} className="hover:opacity-75">
