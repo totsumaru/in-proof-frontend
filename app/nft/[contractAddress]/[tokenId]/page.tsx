@@ -3,6 +3,8 @@
 import Link from "next/link";
 import AvatarPlaceHolder from "@/components/avatar/AvatarPlaceHolder";
 import ImageWithSkeleton from "@/components/image/ImageWithSkeleton";
+import Title from "@/components/text/Title";
+import React from "react";
 
 const people = [
   { name: "戸塚翔太", email: "argate.inc@gmail.com" },
@@ -24,12 +26,8 @@ export default function NFT({
 }) {
   return (
     <div className="mx-auto max-w-7xl px-4 pt-5 sm:px-6 lg:px-8">
-      <div>
-        <Link href={`/user/0xabcd0123`}>
-          マイページに戻る
-        </Link>
-      </div>
       <div className="flex flex-col md:flex-row">
+        {/* NFTの画像 */}
         <div className="sm:w-1/3">
           <ImageWithSkeleton
             imageUrl={"https://i.seadn.io/gcs/files/92e9fd146e8c4bb8bf8f928f5ba0c18e.jpg?auto=format&dpr=1&w=384"}
@@ -38,7 +36,7 @@ export default function NFT({
         </div>
 
         {/* NFTの概要 */}
-        <div className="ml-5">
+        <div className="sm:ml-5 mt-2">
           <h1 className="text-2xl font-bold">MIRAKO. season1</h1>
           <div className="flex gap-2 mt-3">
             <span
@@ -56,8 +54,8 @@ export default function NFT({
         </div>
       </div>
 
-      <div className="mt-5 mb-10">
-        <h2 className="text-xl font-bold">このアイテムを持っている人 </h2>
+      <div className="my-10">
+        <Title text={"このアイテムを持っている人"} icon={<></>}/>
         <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {people.map((person) => (
             <div

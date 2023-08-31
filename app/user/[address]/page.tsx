@@ -6,6 +6,7 @@ import React from "react";
 import Collection from "@/components/list/collection/Collection";
 import UserBlock from "@/components/user/UserBlock";
 import { UserIcon } from "@heroicons/react/24/outline";
+import Title from "@/components/text/Title";
 
 const magicIns: Magic = magic as any;
 
@@ -31,8 +32,8 @@ export default function User(
           department={"計画課"}
         />
       </div>
-      <div className="my-5">
-        <h1 className="text-2xl font-bold text-gray-900 mb-3">コレクション</h1>
+      <div className="my-7">
+        <Title text={"コレクション"} icon={<></>}/>
         <Collection/>
       </div>
     </div>
