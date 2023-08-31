@@ -4,8 +4,8 @@ import { Magic } from "magic-sdk";
 import { magic } from "@/lib/magic";
 import React from "react";
 import Collection from "@/components/image/collection/Collection";
+import { HomeIcon } from "@heroicons/react/24/outline";
 import UserBlock from "@/components/user/UserBlock";
-import { UserIcon } from "@heroicons/react/24/outline";
 
 const magicIns: Magic = magic as any;
 
@@ -20,8 +20,8 @@ export default function User(
   return (
     <div className="mx-auto max-w-7xl px-4 pt-5 sm:px-6 lg:px-8">
       <h1 className="text-xl font-bold flex items-center">
-        <UserIcon className="w-5 h-5 inline text-gray-600 mr-1"/>
-        ユーザーの表示
+        <HomeIcon className="w-5 h-5 inline text-gray-600 mr-1"/>
+        マイページ
       </h1>
       <div className="mt-5">
         <UserBlock

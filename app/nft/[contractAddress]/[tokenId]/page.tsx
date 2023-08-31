@@ -5,21 +5,21 @@ import AvatarPlaceHolder from "@/components/avatar/AvatarPlaceHolder";
 
 const people = [
   { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc1@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc2@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc3@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc4@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc5@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc6@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc7@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc8@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc9@gmail.com" },
 ]
 
 export default function NFT({
-  params: { contractId, tokenId }
+  params: { contractAddress, tokenId }
 }: {
-  params: { contractId: string, tokenId: string }
+  params: { contractAddress: string, tokenId: string }
 }) {
   return (
     <div className="mx-auto max-w-7xl px-4 pt-5 sm:px-6 lg:px-8">
