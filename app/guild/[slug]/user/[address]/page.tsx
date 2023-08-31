@@ -3,21 +3,19 @@
 import { Magic } from "magic-sdk";
 import { magic } from "@/lib/magic";
 import React from "react";
-import Collection from "@/components/list/collection/Collection";
 import UserBlock from "@/components/user/UserBlock";
 import { UserIcon } from "@heroicons/react/24/outline";
 import Title from "@/components/text/Title";
+import Collection from "@/components/grid/collection/Collection";
 
 const magicIns: Magic = magic as any;
 
 // ユーザーのダッシュボードです
-export default function User(
-  {
-    params: { address }
-  }: {
-    params: { address: string }
-  }
-) {
+export default function User({
+  params: { slug, address }
+}: {
+  params: { slug: string, address: string }
+}) {
   return (
     <div className="mx-auto max-w-7xl px-4 pt-5 sm:px-6 lg:px-8">
       <h1 className="text-xl font-bold flex items-center">
@@ -34,7 +32,7 @@ export default function User(
       </div>
       <div className="my-7">
         <Title text={"コレクション"} icon={<></>}/>
-        <Collection/>
+        <Collection slug={slug}/>
       </div>
     </div>
   )

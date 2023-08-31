@@ -7,22 +7,23 @@ import Title from "@/components/text/Title";
 import React from "react";
 
 const people = [
-  { name: "戸塚翔太", email: "argate.inc@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc1@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc2@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc3@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc4@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc5@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc6@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc7@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc8@gmail.com" },
-  { name: "戸塚翔太", email: "argate.inc9@gmail.com" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
+  { name: "戸塚翔太", email: "argate.inc@gmail.com", address: "0xDb40277dd6B3d4f0971A982f9fE9Fd5D96905E0e" },
 ]
 
 export default function NFT({
-  params: { contractAddress, tokenId }
+  params: { slug, tokenId }
 }: {
-  params: { contractAddress: string, tokenId: string }
+  params: { slug: string, tokenId: string }
 }) {
   return (
     <div className="mx-auto max-w-7xl px-4 pt-5 sm:px-6 lg:px-8">
@@ -57,16 +58,16 @@ export default function NFT({
       <div className="my-10">
         <Title text={"このアイテムを持っている人"} icon={<></>}/>
         <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {people.map((person) => (
+          {people.map((person, index) => (
             <div
-              key={person.email}
+              key={index}
               className="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm hover:border-gray-400"
             >
               <div className="flex-shrink-0">
                 <AvatarPlaceHolder/>
               </div>
               <div className="min-w-0 flex-1">
-                <Link href={`/user/0xabcd0123`} className="focus:outline-none">
+                <Link href={`/guild/${slug}/user/${person.address}`} className="focus:outline-none">
                   <span className="absolute inset-0" aria-hidden="true"/>
                   <p className="text-sm font-medium text-gray-900">{person.name}</p>
                   <p className="truncate text-sm text-gray-500">{person.email}</p>

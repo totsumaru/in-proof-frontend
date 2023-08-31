@@ -34,7 +34,7 @@ export default function LogoutButton() {
       onClick={clickHandler}
     >
       {loading && (
-        <div className="mr-2 flex items-center">
+        <div className="flex items-center">
           <ButtonSpinnerSVG/>
         </div>
       )}

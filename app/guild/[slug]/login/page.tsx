@@ -8,7 +8,11 @@ import React from "react";
 
 const magicIns: Magic = magic as any;
 
-export default function Login() {
+export default function Login({
+  params: { slug }
+}: {
+  params: { slug: string }
+}) {
   return (
     <div className="px-4">
       <div
@@ -16,7 +20,7 @@ export default function Login() {
       >
         <h1 className="text-4xl font-bold">Auth App</h1>
         <p className="mt-3 mb-5">ログインをしてください</p>
-        <LoginButton/>
+        <LoginButton redirectUrl={`/guild/${slug}/user/mypage`}/>
       </div>
       <Footer/>
     </div>

@@ -8,8 +8,13 @@ import ButtonSpinnerSVG from "@/public/ButtonSpinnerSVG";
 
 const magicIns: Magic = magic as any;
 
+type Props = {
+  label?: string
+  redirectUrl?: string
+}
+
 // ログインボタンです
-export default function LoginButton() {
+export default function LoginButton({ label, redirectUrl }: Props) {
   const router = useRouter();
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -19,7 +24,9 @@ export default function LoginButton() {
     try {
       const addresses = await magicIns.wallet.connectWithUI()
       if (addresses) {
-        router.push(`/user/${addresses[0]}`);
+        redirectUrl
+          ? router.push(redirectUrl)
+          : router.push(`/user/${addresses[0]}`)
       }
     } catch (error) {
       console.error(error);
@@ -38,11 +45,11 @@ export default function LoginButton() {
        focus-visible:outline-offset-2 focus-visible:outline-indigo-600 inline-flex items-center"
     >
       {loading && (
-        <div className="mr-2 flex items-center">
+        <div className="flex items-center">
           <ButtonSpinnerSVG/>
         </div>
       )}
-      ログイン
+      {label ? label : "ログイン"}
     </button>
   )
 }

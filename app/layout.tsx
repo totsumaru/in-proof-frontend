@@ -14,10 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-    <body className="min-h-screen">
-    <Header/>
-    {children}
-    </body>
+      <body className="min-h-screen">
+        <Header slug="argate"/>
+        {children}
+      </body>
     </html>
   );
 }

@@ -5,19 +5,14 @@ import LogoutButton from "@/components/button/LogoutButton";
 import { Bars3Icon, HomeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-export default function Example() {
+type Props = {
+  slug: string
+}
+
+export default function Header({ slug }: Props) {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
-    // <div className="h-16 shadow flex items-center justify-between px-4 sm:px-6 lg:px-8">
-    //   <img
-    //     className="h-8 w-auto"
-    //     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-    //     alt="Your Company"
-    //   />
-    //   <LogoutButton/>
-    // </div>
-
     <nav className="bg-white shadow border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
@@ -35,7 +30,8 @@ export default function Example() {
           <ul
             className="font-medium flex items-center flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
             <li>
-              <Link href={"/mypage"} className="block py-2 pl-3 pr-4 text-gray-900 flex items-center">
+              <Link href={`/guild/${slug}/user/mypage`}
+                    className="py-2 pl-3 pr-4 text-gray-900 flex items-center">
                 <HomeIcon className="w-5 h-5 inline text-gray-600 mr-1"/>
                 マイページ
               </Link>

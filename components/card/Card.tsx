@@ -8,12 +8,14 @@ type Props = {
   title: string
   text: string
   tag: string
+  slug: string
+  tokenId: number
 }
 
-export default function Card({ key, imageUrl, title, text, tag }: Props) {
+export default function Card({ key, imageUrl, title, text, tag, slug, tokenId }: Props) {
   return (
     <div className="relative aspect-square rounded-xl" key={key}>
-      <Link href={`/nft/0xabcd/1`} className="hover:opacity-75">
+      <Link href={`/guild/${slug}/nft/${tokenId}`} className="hover:opacity-75">
         <div>
           <img className="rounded-xl" src={imageUrl} alt="" loading="lazy"/>
         </div>
