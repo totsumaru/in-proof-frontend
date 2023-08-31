@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import AvatarPlaceHolder from "@/components/avatar/AvatarPlaceHolder";
+import ImageWithSkeleton from "@/components/image/ImageWithSkeleton";
 
 const people = [
   { name: "戸塚翔太", email: "argate.inc@gmail.com" },
@@ -30,9 +31,9 @@ export default function NFT({
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="sm:w-1/3">
-          <img src="https://i.seadn.io/gcs/files/92e9fd146e8c4bb8bf8f928f5ba0c18e.jpg?auto=format&dpr=1&w=384"
-               alt="nft"
-               className=""
+          <ImageWithSkeleton
+            imageUrl={"https://i.seadn.io/gcs/files/92e9fd146e8c4bb8bf8f928f5ba0c18e.jpg?auto=format&dpr=1&w=384"}
+            alt={"NFT"}
           />
         </div>
 

@@ -24,10 +24,10 @@ export default function Card({ key, imageUrl, title, text, tag }: Props) {
           </p>
         </div>
         <div>
-            <span
-              className="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">
-              {tag}
-            </span>
+          <span
+            className="inline-flex items-center rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">
+            {tag}
+          </span>
         </div>
       </Link>
     </div>
