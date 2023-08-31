@@ -15,7 +15,7 @@ export default function Login() {
         className="flex-grow py-20 flex flex-col justify-center items-center w-full max-w-sm shadow-2xl mx-auto border text-center rounded-2xl mt-12"
       >
         <h1 className="text-4xl font-bold">Auth App</h1>
-        <p className="my-3">ログインをしてください</p>
+        <p className="mt-3 mb-5">ログインをしてください</p>
         <LoginButton/>
       </div>
       <Footer/>

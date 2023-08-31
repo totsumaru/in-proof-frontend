@@ -1,28 +1,25 @@
 "use client"
 
-import { useRouter } from "next/navigation";
 import { Magic } from "magic-sdk";
 import { magic } from "@/lib/magic";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import ButtonSpinnerSVG from "@/public/ButtonSpinnerSVG";
 
 const magicIns: Magic = magic as any;
 
-// ログインボタンです
-export default function LoginButton() {
-  const router = useRouter();
+export default function LogoutButton() {
+  const router = useRouter()
   const [loading, setLoading] = useState<boolean>(false)
 
-  // Emailの入力フォームを開きます
-  const handleLoginWithEmail = async () => {
+  const clickHandler = async () => {
     setLoading(true)
+
     try {
-      const address = await magicIns.wallet.connectWithUI()
-      if (address) {
-        router.push("/profile");
-      }
-    } catch (error) {
-      console.error(error);
+      await magicIns.user.logout()
+      router.push("/login")
+    } catch (e) {
+      console.error(e)
     } finally {
       setLoading(false)
     }
@@ -30,19 +27,18 @@ export default function LoginButton() {
 
   return (
     <button
-      disabled={loading}
       type="button"
-      onClick={handleLoginWithEmail}
-      className="rounded-md bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500
+      className="rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50
        focus-visible:outline focus-visible:outline-2
        focus-visible:outline-offset-2 focus-visible:outline-indigo-600 inline-flex items-center"
+      onClick={clickHandler}
     >
       {loading && (
         <div className="mr-2 flex items-center">
           <ButtonSpinnerSVG/>
         </div>
       )}
-      ログイン
+      ログアウト
     </button>
   )
 }
