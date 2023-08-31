@@ -17,9 +17,9 @@ export default function LoginButton() {
   const handleLoginWithEmail = async () => {
     setLoading(true)
     try {
-      const address = await magicIns.wallet.connectWithUI()
-      if (address) {
-        router.push("/profile");
+      const addresses = await magicIns.wallet.connectWithUI()
+      if (addresses) {
+        router.push(`/mypage/${addresses[0]}`);
       }
     } catch (error) {
       console.error(error);

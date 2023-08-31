@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic"
 
+// スケルトン対応したImageBoxです
 const DynamicImageBox = dynamic(() => import("./ImageBox"), {
   ssr: false,
   loading: () => <Skeleton/>
