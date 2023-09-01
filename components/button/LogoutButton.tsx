@@ -8,7 +8,11 @@ import ButtonSpinnerSVG from "@/public/ButtonSpinnerSVG";
 
 const magicIns: Magic = magic as any;
 
-export default function LogoutButton() {
+type Props = {
+  slug: string
+}
+
+export default function LogoutButton({ slug }: Props) {
   const router = useRouter()
   const [loading, setLoading] = useState<boolean>(false)
 
@@ -17,7 +21,7 @@ export default function LogoutButton() {
 
     try {
       await magicIns.user.logout()
-      router.push("/login")
+      router.push(`/guild/${slug}/login`)
     } catch (e) {
       console.error(e)
     } finally {

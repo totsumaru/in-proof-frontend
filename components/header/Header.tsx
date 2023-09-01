@@ -37,7 +37,7 @@ export default function Header({ slug }: Props) {
               </Link>
             </li>
             <li>
-              <LogoutButton/>
+              <LogoutButton slug={slug}/>
             </li>
           </ul>
         </div>

@@ -45,9 +45,7 @@ export default function LoginButton({ label, redirectUrl }: Props) {
        focus-visible:outline-offset-2 focus-visible:outline-indigo-600 inline-flex items-center"
     >
       {loading && (
-        <div className="flex items-center">
-          <ButtonSpinnerSVG/>
-        </div>
+        <ButtonSpinnerSVG/>
       )}
       {label ? label : "ログイン"}
     </button>
