@@ -6,10 +6,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@everipedia/wagmi-magic-connector": "^1.0.2",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@moralisweb3/next": "^2.22.5",
+    "@mui/material": "^5.14.7",
     "@supabase/auth-helpers-nextjs": "latest",
     "@supabase/supabase-js": "latest",
     "@tailwindcss/forms": "^0.5.6",

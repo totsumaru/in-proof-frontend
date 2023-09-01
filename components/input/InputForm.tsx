@@ -1,9 +1,24 @@
+"use client"
+
 import { PhotoIcon } from "@heroicons/react/24/solid";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
+import { Listbox, Transition } from '@headlessui/react'
+import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/24/outline";
 
 const allowedTypes = ['image/png', 'image/jpeg', 'image/svg+xml', 'image/gif'];
 
+const list = [
+  { name: "研修A" },
+  { name: "研修B" },
+  { name: "研修C" },
+  { name: "研修D" },
+  { name: "研修E" },
+]
+
 export default function Example() {
+  const [title, setTitle] = useState<string>("")
+  const [description, setDescription] = useState<string>("")
+  const [tags, setTags] = useState<{ id: number, name: string }[]>()
   const [image, setImage] = useState<string>("")
   const [isImageErr, setImageErr] = useState<boolean>(false)
 
@@ -35,7 +50,7 @@ export default function Example() {
           </p>
         </div>
 
-        <form className="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+        <form className="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2 mb-20">
           <div className="px-4 py-6 sm:p-8">
             <div className="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
@@ -70,6 +85,68 @@ export default function Example() {
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     defaultValue={''}
                   />
+                </div>
+                <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
+              </div>
+
+              {/* タグ */}
+              <div className="col-span-full">
+                <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
+                  タグを選択
+                </label>
+
+                <div className="mt-2">
+                  <Listbox value={tags} onChange={setTags} multiple>
+                    <div className="relative mt-1">
+
+                      {/* 選択ボタン */}
+                      <Listbox.Button
+                        className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left sm:text-sm h-10 border border-gray-300">
+                        <span className="block truncate">
+                          {tags && tags.map((select) => select.name).join(', ')}
+                        </span>
+                        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                          <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true"/>
+                        </span>
+                      </Listbox.Button>
+
+                      <Transition
+                        as={Fragment}
+                        leave="transition ease-in duration-100"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                      >
+                        <Listbox.Options
+                          className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg
+                           ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+                        >
+                          {list.map((person, personIdx) => (
+                            <Listbox.Option
+                              key={personIdx}
+                              className={({ active }) => `relative cursor-default select-none py-2 pl-10 pr-4
+                               ${active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                              }`}
+                              value={person}
+                            >
+                              {({ selected }) => (
+                                <>
+                                  <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
+                                    {person.name}
+                                  </span>
+                                  {selected ? (
+                                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                                      <CheckIcon className="h-5 w-5" aria-hidden="true"/>
+                                    </span>
+                                  ) : null}
+                                </>
+                              )}
+                            </Listbox.Option>
+                          ))}
+                        </Listbox.Options>
+                      </Transition>
+
+                    </div>
+                  </Listbox>
                 </div>
                 <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
               </div>
@@ -112,14 +189,11 @@ export default function Example() {
             </div>
           </div>
           <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
-            <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
-              Cancel
-            </button>
             <button
               type="submit"
               className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Save
+              アイテムを作成
             </button>
           </div>
         </form>
