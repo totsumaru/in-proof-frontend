@@ -15,6 +15,7 @@ export default function AdminHeader({ slug }: Props) {
     url: string,
   }[] = [
     { name: "発行中のアイテム", url: `/guild/${slug}/admin/nft-list` },
+    { name: "タグの管理", url: `/guild/${slug}/admin/tag` },
     { name: "情報", url: `/guild/${slug}/admin/info` },
   ]
 

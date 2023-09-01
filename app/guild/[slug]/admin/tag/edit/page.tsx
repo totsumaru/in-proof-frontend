@@ -1,9 +1,8 @@
-"use client"
-
 import AdminHeader from "@/components/header/AdminHeader";
-import InputForm from "@/components/input/NewNFTForm";
+import Badge from "@/components/badge/Badge";
+import EditTagForm from "@/components/input/EditTagForm";
 
-export default function NewNFT({
+export default function EditTag({
   params: { slug }
 }: {
   params: { slug: string }
@@ -12,9 +11,9 @@ export default function NewNFT({
     <div className="min-h-screen bg-gray-50">
       <AdminHeader slug={slug}/>
       <div className="mx-auto max-w-7xl px-4 pt-5 sm:px-6 lg:px-8">
-        <h1 className="text-2xl text-gray-900 font-bold">アイテムを新規作成</h1>
+        <h1 className="text-2xl text-gray-900 font-bold">タグの編集</h1>
 
-        <InputForm/>
+        <EditTagForm slug={slug}/>
       </div>
     </div>
   )

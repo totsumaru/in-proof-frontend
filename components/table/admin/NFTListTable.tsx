@@ -37,7 +37,7 @@ export default function NFTListTable({ slug }: Props) {
           </p>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-          <NewItemButton/>
+          <NewItemButton slug={slug}/>
         </div>
       </div>
 
