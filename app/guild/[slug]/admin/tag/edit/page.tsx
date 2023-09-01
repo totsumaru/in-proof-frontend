@@ -1,5 +1,4 @@
 import AdminHeader from "@/components/header/AdminHeader";
-import Badge from "@/components/badge/Badge";
 import EditTagForm from "@/components/input/EditTagForm";
 
 export default function EditTag({

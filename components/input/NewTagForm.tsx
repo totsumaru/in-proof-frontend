@@ -8,7 +8,7 @@ type Props = {
   slug: string
 }
 
-export default function EditTagForm({ slug }: Props) {
+export default function NewTagForm({ slug }: Props) {
   const [name, setName] = useState<string>("")
   const [color, setColor] = useState<badgeColor>("gray")
   const [description, setDescription] = useState<string>("")
@@ -17,9 +17,6 @@ export default function EditTagForm({ slug }: Props) {
   return (
     <div className="pb-20">
       <div className="px-4 sm:px-0">
-        <p className="mt-1 text-sm text-gray-600">
-          タグを編集できます。
-        </p>
       </div>
 
       <form className="mt-5 bg-white shadow-lg ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
@@ -103,7 +100,7 @@ export default function EditTagForm({ slug }: Props) {
             type="submit"
             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            更新する
+            タグを作成
           </button>
         </div>
       </form>
