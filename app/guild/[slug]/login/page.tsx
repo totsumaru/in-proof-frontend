@@ -22,7 +22,7 @@ export default function Login({
           className="flex-grow py-20 flex flex-col justify-center items-center w-full max-w-sm shadow-2xl mx-auto border text-center rounded-2xl mt-12"
         >
           <p>株式会社ArGate</p>
-          <h1 className="text-4xl font-bold">Auth App</h1>
+          <h1 className="text-4xl font-bold">InProof</h1>
           <div className="mt-10">
             <LoginButton redirectUrl={`/guild/${slug}/user/mypage`}/>
           </div>

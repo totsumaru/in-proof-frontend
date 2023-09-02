@@ -23,7 +23,7 @@ export default function AdminLogin({
         >
           <p className="w-fit py-1 px-3 bg-yellow-100 rounded-md border border-yellow-400">管理者ページ</p>
           <p className="mt-5">株式会社ArGate</p>
-          <h1 className="text-3xl font-bold mt-1">AuthApp</h1>
+          <h1 className="text-3xl font-bold mt-1">InProof</h1>
           <div className="mt-10">
             <LoginButton label="管理者でログイン" redirectUrl={`/guild/${slug}/admin/info`}/>
           </div>

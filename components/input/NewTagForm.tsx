@@ -77,9 +77,9 @@ export default function NewTagForm({ slug }: Props) {
                   defaultValue="Canada"
                   onChange={(e) => setColor(e.target.value as badgeColor)}
                 >
-                  {allBadgesColor.map((badge, index) => (
-                    <option value={badge.color} key={index}>
-                      {badge.jp}
+                  {Object.entries(allBadgesColor).map(([color, colorJP]) => (
+                    <option value={color} key={color}>
+                      {colorJP}
                     </option>
                   ))}
                 </select>

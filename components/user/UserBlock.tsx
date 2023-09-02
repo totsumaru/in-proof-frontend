@@ -7,7 +7,7 @@ type Props = {
 
 export default function UserBlock({ name, email, address, department }: Props) {
   return (
-    <div className="p-3 sm:p-5 shadow border w-fit rounded-md bg-gray-50 max-w-full">
+    <div className="p-3 sm:p-5 shadow border w-fit rounded-md bg-white max-w-full">
       <h3 className="text-gray-900 text-sm">{department}</h3>
       <h1 className="text-gray-900 text-xl font-bold mt-1">{name}</h1>
       <p className="text-gray-600 text-sm mt-1">{email}</p>

@@ -1,3 +1,3 @@
-# nft-view-frontend
+# in-proof-frontend
 
-NFTを閲覧することに特化したアプリケーション`NFTView`のフロントエンドです。
+社内NFTツール`InProof`のフロントエンドです。

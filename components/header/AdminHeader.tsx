@@ -27,7 +27,7 @@ export default function AdminHeader({ slug }: Props) {
         {/* 左側 */}
         <div className="flex items-center">
           <a href="/" className="flex items-center">
-            <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">AuthApp</span>
+            <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">InProof</span>
           </a>
 
           {/* ナビゲーション */}

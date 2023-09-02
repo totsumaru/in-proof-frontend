@@ -2,19 +2,16 @@ export type badgeColor = "gray" | "red" | "yellow" | "green" | "blue" | "indigo"
 
 // 全てのバッジの配列です
 // バッジを選択する場合は、これをリストとして使用します。
-export const allBadgesColor: {
-  color: badgeColor,
-  jp: string
-}[] = [
-  { color: "gray", jp: "グレー" },
-  { color: "red", jp: "赤" },
-  { color: "yellow", jp: "黄色" },
-  { color: "green", jp: "緑" },
-  { color: "blue", jp: "青" },
-  { color: "indigo", jp: "藍色" },
-  { color: "purple", jp: "紫" },
-  { color: "pink", jp: "ピンク" },
-]
+export const allBadgesColor: Record<badgeColor, string> = {
+  gray: "グレー",
+  red: "赤",
+  yellow: "黄色",
+  green: "緑",
+  blue: "青",
+  indigo: "藍色",
+  purple: "紫",
+  pink: "ピンク",
+};
 
 type Props = {
   color: badgeColor

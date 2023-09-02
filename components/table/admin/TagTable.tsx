@@ -1,7 +1,7 @@
 "use client"
 
 import NewTagButton from "@/components/button/NewTagButton";
-import Badge, { badgeColor } from "@/components/badge/Badge";
+import Badge, { allBadgesColor, badgeColor } from "@/components/badge/Badge";
 import Link from "next/link";
 
 type badge = {
@@ -64,7 +64,7 @@ export default function TagTable({ slug }: Props) {
                       {badge.name}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{badge.description}</td>
-                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{badge.color}</td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{allBadgesColor[badge.color]}</td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                       <Badge color={badge.color} label={badge.name}/>
                     </td>
