@@ -1,11 +1,10 @@
 const navigation = {
   main: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: "TOPページ", href: "/" },
+    { name: "会社概要", href: "#" },
+    { name: "利用規約", href: "#" },
+    { name: "特定商取引法に関する表示", href: "#" },
+    { name: "お問い合わせ", href: "#" },
   ],
 }
 

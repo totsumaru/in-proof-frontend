@@ -86,7 +86,7 @@ export default function NFTListTable({ slug }: Props) {
                       {person.created}
                     </td>
                     <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                      <Link href="#" className="text-indigo-600 hover:text-indigo-900">
+                      <Link href={`/guild/${slug}/admin/nft/send`} className="text-indigo-600 hover:text-indigo-900">
                         送付する
                       </Link>
                     </td>

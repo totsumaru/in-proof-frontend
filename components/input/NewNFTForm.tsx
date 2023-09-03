@@ -42,16 +42,14 @@ export default function Example() {
 
   return (
     <div className="pb-20">
-      <div className="px-4 sm:px-0">
-        <p className="mt-1 text-sm text-gray-600">
-          新規アイテムを作成します。<br/>
-          作成したあと、誰かに配布する前であれば削除することが可能です。
-        </p>
-      </div>
-
       <form className="mt-5 bg-white shadow-lg ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
         <div className="px-4 py-6 sm:p-8">
-          <div className="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <p className="text-sm text-gray-600">
+            新規アイテムを作成します。<br/>
+            作成したあと、<b>誰かに配布する前であれば</b>削除できます。
+          </p>
+
+          <div className="grid mt-5 max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 
             {/* 画像 */}
             <div className="col-span-full">
