@@ -19,7 +19,8 @@ export default function LogoutButton({ slug }: Props) {
     setLoading(true)
 
     try {
-      await magicIns.user.logout()
+      // await magicIns.user.logout()
+      await magicIns.wallet.getProvider()
       router.push(`/guild/${slug}/login`)
     } catch (e) {
       console.error(e)
